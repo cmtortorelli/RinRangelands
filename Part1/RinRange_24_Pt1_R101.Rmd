@@ -242,7 +242,7 @@ Sometimes we want to change something about the rows, like rearranging them in t
   
 We can use the function arrange() to change the order of the rows based on specific values.  
 
-In this example, we can arrange our rows by year, , then by bare soil cover.  
+In this example, we can arrange our rows by year, then by bare soil cover.  
 ```{r}
 indicator_data = indicator_data %>% arrange(Year, BareSoilCover)
 ```
@@ -281,12 +281,11 @@ If you are dealing with a data set with NA values, you should [spend more time l
 
 
 In the indicator data, there are many examples sprinkled throughout. Let say we are interested in further exploring Woody_Height later. We may want to know if there are any NA values in this column. To check this we can use the code. 
-##lets change the variable we use here to one that Claire wants to use in the graphs##
 ```{r}
 WoodyHeight_NA_Rows = indicator_data %>% filter(is.na(Hgt_Woody_Avg))
 ```
   
-From my knowledge of how this data set, I know that these NA's actually signify 0 values because there was no Woody species at the plot.
+From my knowledge of how this data set, I know that these NA's actually signify 0 values because there was no woody species at the plot.
 
 With this knowledge we now want to replace the NA values with 0's. 
 ```{r}
